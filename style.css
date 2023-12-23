@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik Light';
+    box-sizing: border-box;
+    
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    background-color:rgb(116, 80, 29);
+    
+    }
+
+#home{
+    
+    width: 100%;
+    min-height: 100vh;
+    
+}    
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px 50px;
+    background-color: rgba(119, 82, 34, 0.018);
+    
+}
+
+#nav img{
+    width: 10vw;
+    /* background-color: #fff; */
+    /* border-radius: 15px; */
+    
+}
+#nav a{
+    text-decoration: none;
+    font-size:1.4vw;
+    padding: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgb(255, 255, 255);
+}
+
+#nav-right i{
+    font-size: 1.6vw;
+}
+
+#home #homemain{
+    width: 100%;
+    padding: 15vw 15vw;
+}
+
+#homemain h2{
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.5vw;
+    color: white;
+
+}
+
+.heading{
+    display: flex;
+    gap: 30px;
+    
+}
+
+#homemain .heading h2{
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
+    font-size: 6vw;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+ #homelast{
+    padding: 5vw 15vw;
+}
+
+#homelast p{
+    width: 60%;
+    font-size: 1.4vw;
+    font-weight: 600;
+    letter-spacing: -.07vw;
+    color: white;
+}
+
+#homelast p::selection{
+    color: black;
+    background-color: #fff;
+}
+
+
+#featured{
+    padding: 10vw 15vw;
+    
+}
+
+#featured h1{
+    color: white;
+    font-size: 3vw;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+#featured h1:nth-child(2){
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    letter-spacing: 10px;
+    font-size: 6vw;
+    
+    
+}
+
+#f-images{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    margin-top: 5vw;
+    /* border:2px solid red; */
+}
+
+#f-left{
+    overflow: auto;
+    width: 45%;
+    height: inherit;
+    /* border: 3px solid blue; */
+}
+.f-left-elem{
+    width: 100%;
+    height:inherit;
+    background-color: red;
+
+}
+
+#f-right{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 45%;
+    height: inherit;
+    /* border: 1px solid rgb(33, 248, 58); */
+}
+
+#f-right .images{
+    width: 90%;
+    height: 90%;
+    background-color: red;
+}
