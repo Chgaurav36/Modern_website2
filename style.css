@@ -34,7 +34,7 @@ html,body{
     justify-content: space-between;
     width: 100%;
     padding: 30px 50px;
-    background-color: rgba(0, 0, 0, 0.018);
+    background-color: rgba(247, 145, 29, 0.018);
     
 }
 
@@ -87,7 +87,7 @@ html,body{
 }
 
 #homemain .heading h2:hover{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
  #homelast{

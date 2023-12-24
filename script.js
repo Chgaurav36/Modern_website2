@@ -1,6 +1,7 @@
 Shery.mouseFollower();
 Shery.makeMagnet(".magnet");
-Shery.hoverWithMediaCircle(".hvr", {videos: ["./videos/0.mp4","./videos/0.mp4", "./videos/0.mp4"]});
+Shery.hoverWithMediaCircle(".hvr", 
+{videos: ["./videos/0.mp4","./videos/0.mp4", "./videos/0.mp4"]});
 
 
 gsap.to(".f-left-elem", {
