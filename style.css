@@ -2,8 +2,12 @@
     margin: 0;
     padding: 0;
     font-family: 'Rubik Light';
-    box-sizing: border-box;
-    
+    box-sizing: border-box;  
+}
+
+*::selection{
+    color: rgb(255, 255, 255);
+    background-color: #000000;
 }
 
 html,body{
@@ -80,6 +84,7 @@ html,body{
     text-transform: uppercase;
 
 }
+
  #homelast{
     padding: 5vw 15vw;
 }
@@ -103,14 +108,14 @@ html,body{
     
 }
 
-#featured h1{
+.fheading>h1{
     color: white;
     font-size: 3vw;
     font-weight: 800;
     text-transform: uppercase;
 }
 
-#featured h1:nth-child(2){
+.fheading>h1:nth-child(2){
     color: transparent;
     -webkit-text-stroke: 2px rgb(255, 255, 255);
     letter-spacing: 10px;
@@ -129,15 +134,39 @@ html,body{
 }
 
 #f-left{
-    overflow: auto;
+    color: white;
+    overflow: hidden;
     width: 45%;
     height: inherit;
     /* border: 3px solid blue; */
 }
+
+#f-left h1{
+    font-size: 2.5vw;
+    line-height: 1;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 1.5vw 0;
+
+}
+
+#f-left h4{
+    font-size:3.5vw ;
+    opacity: .5;
+}
+
+#f-left h3{
+    font-size: 4vw;
+}
+
 .f-left-elem{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height:inherit;
-    background-color: red;
+    /* background-color: red; */
 
 }
 
@@ -155,3 +184,73 @@ html,body{
     height: 90%;
     background-color: red;
 }
+
+#btn{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn button{
+    cursor: pointer;
+    padding: 1.3vw 2.5vw;
+    border-radius: 100px;
+    border: 2px solid grey;
+    background-color: white;
+    font-size: 1vw;
+    font-weight: 600;
+    letter-spacing: .1vw;
+}
+
+#dev{
+    width: 100%;
+    padding: 5vw 15vw;
+}
+
+#dev h1{
+    font-size: 4vw;
+    font-weight: 400;
+    width: 60%;
+    line-height:1 ;
+}
+#dev p{
+    font-size: 1.5vw;
+    margin-top: 2vw;
+    letter-spacing: -.5px;
+    width: 60%;
+}
+
+#slides{
+    padding: 3vw 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slide{
+    width: 30%;   
+}
+
+.slide .img{
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgb(243, 202, 0);
+}
+
+.slide .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide .tag{
+    cursor: pointer;
+    width: fit-content;
+    padding: 10px 22px;
+    border-radius: 100px;
+    background-color: rgb(223, 223, 223);
+    margin: 20px 0;
+}
+
