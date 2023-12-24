@@ -11,24 +11,29 @@
 
     rel="stylesheet"
 />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+<!--Added Shery js stylrsheet-->
+<link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" /> <!-- Recommended -->
 </head>
 <body>
     <div id="main">
         <div id="home">
             <div id="nav">
-                <img src="./images/logo.png" alt="#">
+                <img class="magnet" src="./images/logo.png" alt="#">
                 <div id="nav-right">
                      <a href="">Home</a>
-                     <a href="">Menu <i class="ri-menu-2-line"></i></a>
+                     <a href="">Menu <i class="ri-menu-2-line magnet"></i></a>
 
             </div>
         </div>
         <div id="homemain">
             <h2>Fuel your dreams, sip by sip.</h2>
             <div class="heading">
-                <h2>Coffee</h2>
-                <h2>with</h2>
-                <h2>us.</h2>
+                <h2 class="hvr">Coffee</h2>
+                <h2 class="hvr">with</h2>
+                <h2 class="hvr">us.</h2>
             </div>
            </div>
            <div id="homelast">
@@ -60,7 +65,7 @@
                         <h1>Espresso, steamed milk, mocha sauce and peppermint-flavored syrup.</h1><br><br>
                         <h4>Order Now !</h4>
                     </div>
-                    <div class="f-left-elem">
+                    <div class="f-left-elem last ">
                         <h3>Peppermint Mocha</h3>
                         <h1>Espresso, steamed milk, mocha sauce and peppermint-flavored syrup.</h1><br><br>
                         <h4>Order Now !</h4>
@@ -68,11 +73,16 @@
                     
                 </div>
                 <div id="f-right">
-                    <div class="images"></div>
+                    <div class="images">
+                        <img src="./images/1_Slide_Img.jpg" alt="">
+                        <img src="./images/2_Slide_Img.jpg" alt="">
+                        <img src="./images/3_Slide_Img.jpg" alt="">
+                        <img src="./images/4_Slide_Img.jpg" alt="">
+                    </div>
                 </div>
             </div>
             <div id="btn">
-                <button>View all product</button>
+                <button class="magnet">View all product</button>
             </div>
            
         </div>
@@ -84,21 +94,21 @@
         <div id="slides">
             <div class="slide">
                 <div class="img">
-                    <img src="./images/1_Slide_Img.jpg" alt="">
+                    <img src="./images/New_1.jpg" alt="">
                 </div>
                 <div class="tag">Hello</div>
                 <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt corporis quidem odit.</h3>
             </div>
             <div class="slide">
                 <div class="img">
-                    <img src="./images/2_Slide_Img.jpg" alt="">
+                    <img src="./images/New_4.png" alt="">
                 </div>
                 <div class="tag">Hello</div>
                 <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt corporis quidem odit.</h3>
             </div>
             <div class="slide">
                 <div class="img">
-                    <img src="./images/3_Slide_Img.jpg" alt="">
+                    <img src="./images/New_3.jpg" alt="">
                 </div>
                 <div class="tag">Hello</div>
                 <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt corporis quidem odit.</h3>
@@ -107,5 +117,13 @@
 
         
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"
+        integrity="sha512-auFmPm+de880vk/c+bgBmuOnQ7BM28z7zPWmepVgX8737t75OHZjElOnQqERwP8cE4DIyCJ+gb1kE0b/eLWcnA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+        <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script> <!-- Recommended -->
+    <script src="script.js"></script>
 </body>
 </html>
