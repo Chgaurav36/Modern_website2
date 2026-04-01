@@ -153,19 +153,23 @@ gsap.to(".f-left-elem", {
 });
 
 let sections = document.querySelectorAll(".f-left-elem");
-Shery.imageEffect(".images", {
-  style: 4,
-  config: { onMouse: { value: 1 } },
-  slideStyle: (setScroll) => {
-    sections.forEach(function (section, index) {
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        scrub: 1,
-        onUpdate: function (prog) {
-          setScroll(prog.progress + index);
-        },
-      });
-    });
-  },
+let images = document.querySelectorAll("#f-right .images img");
+
+// Simple image transition based on scroll
+sections.forEach(function (section, index) {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top center",
+    end: "bottom center",
+    scrub: 1,
+    onUpdate: function (prog) {
+      // Hide all images
+      images.forEach(img => img.style.opacity = "0");
+
+      // Show current image
+      if (images[index]) {
+        images[index].style.opacity = "1";
+      }
+    },
+  });
 });
