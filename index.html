@@ -3,10 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover the finest coffee experience at Coffee With Us. Enjoy premium blends, innovative drinks, and a cozy atmosphere." />
+    <meta name="keywords" content="coffee, cafe, espresso, latte, mocha, premium coffee, coffee shop" />
+    <meta name="author" content="Coffee With Us" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Coffee With Us - Premium Coffee Experience" />
+    <meta property="og:description" content="Discover the finest coffee experience at Coffee With Us. Enjoy premium blends, innovative drinks, and a cozy atmosphere." />
+    <meta property="og:image" content="./images/logo.png" />
+    <meta property="og:url" content="https://coffeewithus.com" />
+    <meta property="og:type" content="website" />
     <link rel="icon" type="image/png" href="./images/logo.png">
     <title>COFFEE WITH US</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -19,43 +27,12 @@
     />
     <!--Added Shery js stylrsheet-->
     <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
-    <!-- Recommended -->
-
-    <style>#homemain {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 5%;
-}
-
-/* 🎥 Video behaves like background */
-#homemain .bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-/* 🌑 Overlay via CSS only */
-#homemain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
-}</style>
   </head>
   <body>
     <div id="main">
       <div id="home">
         <div id="nav">
-          <img class="magnet" src="./images/logo.png" alt="#" />
+          <img class="magnet" src="./images/logo.png" alt="Coffee With Us Logo" />
           <div id="nav-right">
             <a href="/">Home</a>
             <a href="">Menu <i class="ri-menu-2-line magnet"></i></a>
@@ -71,8 +48,9 @@
         </div> -->
 
         <div id="homemain">
-  <video class="bg-video" autoplay muted loop playsinline>
+  <video class="bg-video" autoplay muted loop playsinline poster="./images/logo.png">
     <source src="./videos/3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
 
   <h2>Fuel your dreams, sip by sip.</h2>
@@ -137,10 +115,10 @@
           </div>
           <div id="f-right">
             <div class="images">
-              <img src="./images/1_Slide_Img.jpg" alt="" />
-              <img src="./images/2_Slide_Img.jpg" alt="" />
-              <img src="./images/3_Slide_Img.jpg" alt="" />
-              <img src="./images/4_Slide_Img.jpg" alt="" />
+              <img src="./images/1_Slide_Img.jpg" alt="Peppermint Mocha coffee drink" />
+              <img src="./images/2_Slide_Img.jpg" alt="Featured coffee blend" />
+              <img src="./images/3_Slide_Img.jpg" alt="Specialty coffee creation" />
+              <img src="./images/4_Slide_Img.jpg" alt="Artisan coffee beverage" />
             </div>
           </div>
         </div>
@@ -156,7 +134,7 @@
 
         <div class="mobile-slider">
           <div class="slide">
-            <img src="./images/1_Slide_Img.jpg" alt="" />
+            <img src="./images/1_Slide_Img.jpg" alt="Peppermint Mocha coffee drink" />
             <div class="content">
               <h3>Peppermint Mocha</h3>
               <p>Espresso, steamed milk, mocha sauce and peppermint syrup.</p>
@@ -165,7 +143,7 @@
           </div>
 
           <div class="slide">
-            <img src="./images/2_Slide_Img.jpg" alt="" />
+            <img src="./images/2_Slide_Img.jpg" alt="Featured coffee blend" />
             <div class="content">
               <h3>Peppermint Mocha</h3>
               <p>Espresso, steamed milk, mocha sauce and peppermint syrup.</p>
@@ -174,7 +152,7 @@
           </div>
 
           <div class="slide">
-            <img src="./images/3_Slide_Img.jpg" alt="" />
+            <img src="./images/3_Slide_Img.jpg" alt="Specialty coffee creation" />
             <div class="content">
               <h3>Peppermint Mocha</h3>
               <p>Espresso, steamed milk, mocha sauce and peppermint syrup.</p>
@@ -194,7 +172,7 @@
       <div id="slides">
         <div class="slide">
           <div class="img">
-            <img src="./images/New_1.jpg" alt="" />
+            <img src="./images/New_1.jpg" alt="Coffee shop interior" />
           </div>
           <div class="tag">Hello</div>
           <h3>
@@ -204,7 +182,7 @@
         </div>
         <div class="slide">
           <div class="img">
-            <img src="./images/New_4.png" alt="" />
+            <img src="./images/New_4.png" alt="Coffee brewing process" />
           </div>
           <div class="tag">Hello</div>
           <h3>
@@ -214,7 +192,7 @@
         </div>
         <div class="slide">
           <div class="img">
-            <img src="./images/New_3.jpg" alt="" />
+            <img src="./images/New_3.jpg" alt="Fresh coffee beans" />
           </div>
           <div class="tag">Hello</div>
           <h3>
@@ -241,3 +219,9 @@
     <script src="script.js"></script>
   </body>
 </html>
+<noscript>
+  <style>
+    .hvr { color: white !important; }
+    .magnet { transform: none !important; }
+  </style>
+</noscript>
