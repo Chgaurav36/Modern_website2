@@ -1,3 +1,68 @@
+// Cart functionality
+let cart = JSON.parse(localStorage.getItem('coffeeCart')) || [];
+
+function updateCartCount() {
+  const cartCount = document.getElementById('cart-count');
+  if (cartCount) {
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalItems;
+  }
+}
+
+function addToCart(productName, price) {
+  const existingItem = cart.find(item => item.name === productName);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      name: productName,
+      price: parseFloat(price),
+      quantity: 1
+    });
+  }
+  localStorage.setItem('coffeeCart', JSON.stringify(cart));
+  updateCartCount();
+  showNotification(`${productName} added to cart!`);
+}
+
+function showNotification(message) {
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.textContent = message;
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+  `;
+  document.body.appendChild(notification);
+
+  // Remove after 3 seconds
+  setTimeout(() => {
+    notification.style.animation = 'slideOut 0.3s ease-out';
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
+}
+
+// Add event listeners to add-to-cart buttons
+document.addEventListener('DOMContentLoaded', function() {
+  updateCartCount();
+
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const product = this.getAttribute('data-product');
+      const price = this.getAttribute('data-price');
+      addToCart(product, price);
+    });
+  });
+});
+
 // makeMagnet
 Shery.mouseFollower();
 const magnetElements = document.querySelectorAll(".magnet");

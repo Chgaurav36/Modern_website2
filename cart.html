@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View and manage your shopping cart at Coffee With Us." />
+    <meta name="keywords" content="cart, shopping cart, coffee order" />
+    <meta name="author" content="Coffee With Us" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Cart - Coffee With Us" />
+    <meta property="og:description" content="View and manage your shopping cart." />
+    <meta property="og:image" content="./images/logo.png" />
+    <meta property="og:url" content="https://coffeewithus.com/cart.html" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>Cart - COFFEE WITH US</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="nav">
+        <img class="magnet" src="./images/logo.png" alt="Coffee With Us Logo" />
+        <div id="nav-right">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu <i class="ri-menu-2-line magnet"></i></a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="cart.html" id="cart-link">Cart <span id="cart-count">0</span></a>
+        </div>
+      </div>
+
+      <div id="cart-page">
+        <div class="cart-header">
+          <h1>Your Cart</h1>
+          <p id="empty-cart-message" style="display: none;">Your cart is empty. <a href="menu.html">Browse our menu</a> to add items.</p>
+        </div>
+
+        <div id="cart-items">
+          <!-- Cart items will be populated by JavaScript -->
+        </div>
+
+        <div id="cart-summary" style="display: none;">
+          <div class="summary-details">
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span>Tax (8.25%):</span>
+              <span id="tax">$0.00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total:</span>
+              <span id="total">$0.00</span>
+            </div>
+          </div>
+          <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"
+      integrity="sha512-auFmPm+de880vk/c+bgBmuOnQ7BM28z7zPWmepVgX8737t75OHZjElOnQqERwP8cE4DIyCJ+gb1kE0b/eLWcnA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/sheryjs/dist/Shery.js"
+    ></script>
+    <script src="script.js"></script>
+    <script>
+      // Cart page specific JavaScript
+      document.addEventListener('DOMContentLoaded', function() {
+        displayCartItems();
+        updateCartCount();
+      });
+
+      function displayCartItems() {
+        const cart = JSON.parse(localStorage.getItem('coffeeCart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartSummary = document.getElementById('cart-summary');
+        const emptyMessage = document.getElementById('empty-cart-message');
+
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = '';
+          cartSummary.style.display = 'none';
+          emptyMessage.style.display = 'block';
+          return;
+        }
+
+        emptyMessage.style.display = 'none';
+        cartSummary.style.display = 'block';
+
+        cartItemsContainer.innerHTML = cart.map((item, index) => `
+          <div class="cart-item">
+            <div class="item-details">
+              <h3>${formatProductName(item.name)}</h3>
+              <p>$${item.price.toFixed(2)} each</p>
+            </div>
+            <div class="quantity-controls">
+              <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+              <span class="quantity">${item.quantity}</span>
+              <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+            </div>
+            <div class="item-total">
+              <p>$${(item.price * item.quantity).toFixed(2)}</p>
+              <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+            </div>
+          </div>
+        `).join('');
+
+        updateCartSummary();
+      }
+
+      function formatProductName(name) {
+        return name.split('-').map(word =>
+          word.charAt(0).toUpperCase() + word.slice(1)
+        ).join(' ');
+      }
+
+      function updateQuantity(index, change) {
+        const cart = JSON.parse(localStorage.getItem('coffeeCart')) || [];
+        cart[index].quantity += change;
+
+        if (cart[index].quantity <= 0) {
+          cart.splice(index, 1);
+        }
+
+        localStorage.setItem('coffeeCart', JSON.stringify(cart));
+        displayCartItems();
+        updateCartCount();
+      }
+
+      function removeItem(index) {
+        const cart = JSON.parse(localStorage.getItem('coffeeCart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('coffeeCart', JSON.stringify(cart));
+        displayCartItems();
+        updateCartCount();
+      }
+
+      function updateCartSummary() {
+        const cart = JSON.parse(localStorage.getItem('coffeeCart')) || [];
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const tax = subtotal * 0.0825;
+        const total = subtotal + tax;
+
+        document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+        document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+      }
+
+      document.getElementById('checkout-btn').addEventListener('click', function() {
+        alert('Thank you for your order! This is a demo - in a real application, this would proceed to payment processing.');
+      });
+    </script>
+  </body>
+</html>

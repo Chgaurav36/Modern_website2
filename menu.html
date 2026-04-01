@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore our complete menu of premium coffees, lattes, and specialty drinks at Coffee With Us." />
+    <meta name="keywords" content="coffee menu, drinks, latte, espresso, specialty coffee" />
+    <meta name="author" content="Coffee With Us" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Menu - Coffee With Us" />
+    <meta property="og:description" content="Explore our complete menu of premium coffees, lattes, and specialty drinks." />
+    <meta property="og:image" content="./images/logo.png" />
+    <meta property="og:url" content="https://coffeewithus.com/menu.html" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>Menu - COFFEE WITH US</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="nav">
+        <img class="magnet" src="./images/logo.png" alt="Coffee With Us Logo" />
+        <div id="nav-right">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu <i class="ri-menu-2-line magnet"></i></a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="cart.html" id="cart-link">Cart <span id="cart-count">0</span></a>
+        </div>
+      </div>
+
+      <div id="menu-page">
+        <div class="menu-header">
+          <h1>Our Menu</h1>
+          <p>Discover our carefully crafted selection of premium coffees and beverages</p>
+        </div>
+
+        <div class="menu-section">
+          <h2>Hot Coffees</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Espresso</h3>
+                <p>Rich, bold shot of pure espresso</p>
+                <span class="price">$2.99</span>
+              </div>
+              <button class="add-to-cart" data-product="espresso" data-price="2.99">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Americano</h3>
+                <p>Espresso diluted with hot water</p>
+                <span class="price">$3.49</span>
+              </div>
+              <button class="add-to-cart" data-product="americano" data-price="3.49">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Cappuccino</h3>
+                <p>Espresso with steamed milk and foam</p>
+                <span class="price">$4.49</span>
+              </div>
+              <button class="add-to-cart" data-product="cappuccino" data-price="4.49">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Latte</h3>
+                <p>Espresso with steamed milk</p>
+                <span class="price">$4.99</span>
+              </div>
+              <button class="add-to-cart" data-product="latte" data-price="4.99">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <h2>Specialty Drinks</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Peppermint Mocha</h3>
+                <p>Espresso, steamed milk, mocha sauce and peppermint syrup</p>
+                <span class="price">$5.99</span>
+              </div>
+              <button class="add-to-cart" data-product="peppermint-mocha" data-price="5.99">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Vanilla Latte</h3>
+                <p>Smooth espresso with steamed milk and vanilla syrup</p>
+                <span class="price">$4.99</span>
+              </div>
+              <button class="add-to-cart" data-product="vanilla-latte" data-price="4.99">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Caramel Macchiato</h3>
+                <p>Espresso marked with vanilla syrup, steamed milk and caramel</p>
+                <span class="price">$5.49</span>
+              </div>
+              <button class="add-to-cart" data-product="caramel-macchiato" data-price="5.49">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>White Chocolate Mocha</h3>
+                <p>Espresso with white chocolate and steamed milk</p>
+                <span class="price">$5.79</span>
+              </div>
+              <button class="add-to-cart" data-product="white-chocolate-mocha" data-price="5.79">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <h2>Cold Drinks</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Cold Brew</h3>
+                <p>Smooth, cold-steeped coffee served over ice</p>
+                <span class="price">$3.99</span>
+              </div>
+              <button class="add-to-cart" data-product="cold-brew" data-price="3.99">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Iced Latte</h3>
+                <p>Espresso with cold milk over ice</p>
+                <span class="price">$4.99</span>
+              </div>
+              <button class="add-to-cart" data-product="iced-latte" data-price="4.99">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Frappuccino</h3>
+                <p>Blended coffee drink with ice and whipped cream</p>
+                <span class="price">$5.99</span>
+              </div>
+              <button class="add-to-cart" data-product="frappuccino" data-price="5.99">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Nitro Cold Brew</h3>
+                <p>Cold brew infused with nitrogen for creamy texture</p>
+                <span class="price">$4.99</span>
+              </div>
+              <button class="add-to-cart" data-product="nitro-cold-brew" data-price="4.99">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <h2>Food Items</h2>
+          <div class="menu-items">
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Croissant</h3>
+                <p>Buttery, flaky pastry perfect with coffee</p>
+                <span class="price">$3.49</span>
+              </div>
+              <button class="add-to-cart" data-product="croissant" data-price="3.49">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Muffin</h3>
+                <p>Fresh baked blueberry or chocolate chip muffin</p>
+                <span class="price">$2.99</span>
+              </div>
+              <button class="add-to-cart" data-product="muffin" data-price="2.99">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Avocado Toast</h3>
+                <p>Sourdough toast with avocado, cherry tomatoes, and herbs</p>
+                <span class="price">$7.99</span>
+              </div>
+              <button class="add-to-cart" data-product="avocado-toast" data-price="7.99">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h3>Bagel with Cream Cheese</h3>
+                <p>Toasted bagel with herb cream cheese</p>
+                <span class="price">$4.49</span>
+              </div>
+              <button class="add-to-cart" data-product="bagel-cream-cheese" data-price="4.49">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"
+      integrity="sha512-auFmPm+de880vk/c+bgBmuOnQ7BM28z7zPWmepVgX8737t75OHZjElOnQqERwP8cE4DIyCJ+gb1kE0b/eLWcnA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/sheryjs/dist/Shery.js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
